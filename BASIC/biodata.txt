@@ -1,0 +1,20 @@
+Nama 			:Yatinah
+Tempat,Tanggal Lahir 	:Wonosobo, 18 Maret 2003
+Alamat			:Tegalsari, Garung,Wonosobo
+Email			:atinn433@gmail.com
+No HP			:082134572811
+Universitas		:Universitas Jenderal Achmad Yani
+Fakultas		:FTTI
+Program Studi		:Sistem Informasi
+NIM			:212103019
+____________________________________________________________________________________________________
+Nama 			:Luca
+Tempat,Tanggal Lahir 	:Indonesia, 16 Januari 2025
+Alamat			:Nowhere
+Email			:luca@gmail.com
+No HP			:082537827293
+Universitas		:Universitas Jenderal Achmad Yani
+Fakultas		:FTTI
+Program Studi		:Psikologi
+NIM			:3776383
+____________________________________________________________________________________________________
