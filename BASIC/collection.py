@@ -17,8 +17,30 @@ class Hero(object):
         print(self.listHero)
         print(f"=== Daftar superhero ===")
         print ("Hero pertama:", self.listHero[0].nama,"\n")
+        print(f"{'':=^57}")
+        print(f"|Nama\t\t|Alias\t\t|Kelompok\t\t|")
+        print(f"{'':=^57}")
         for k in self.listHero:
-            print("Nama: {}\nAlias: {}\nKelompok: {}\n".format(k.nama, k.alias, k.kelompok))
+            print(f"|{k.nama}\t\t|{k.alias}\t\t|{k.kelompok}\t\t|")
+        print(f"{'':=^57}")
+        def panggilHero(pahlawan):
+            assert(pahlawan.kelompok == "Avengers"), "Hero tidak bisa dipanggil."
+            return print("Avengers Berkumpul!")   
+        try:
+            panggilHero(self.listHero[0])
+        except AssertionError as error:
+            print(error)
+            print('Hero bukan bagian dari Avengers!')
+        else:
+            k = self.listHero[0].kelompok
+            print("Hero bagian dari",k+'!')
+        finally:
+            print('Resume:')
+            print(f"{'':=^57}")
+            print(f"|Nama\t\t|Alias\t\t|Kelompok\t\t|")
+            print(f"{'':=^57}")
+            print(f"|{self.listHero[0].nama}\t\t|{self.listHero[0].alias}\t\t|{self.listHero[0].kelompok}\t\t|")
+            print(f"{'':=^57}")
 
 k = Hero('','','')
 k.inputHero()
