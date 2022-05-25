@@ -18,7 +18,7 @@ class Pegawai:
     def Ubah_Gaji_Pokok(self):
         self.gaji_pokok = float(input('Ubah Gaji Pokok :'))
     def Gaji_Bersih(self):
-        self.x = (getattr(Pegawai,'gaji_pokok')+getattr(Pegawai,'tunjangan'))*getattr(Pegawai,'pajak')
+        self.x = getattr(Pegawai,'gaji_pokok')-getattr(Pegawai,'pajak')+getattr(Pegawai,'tunjangan')
         setattr(Pegawai,'x',self.x)
         return getattr(Pegawai,'x')
 

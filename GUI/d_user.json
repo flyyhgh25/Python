@@ -1,0 +1,44 @@
+[
+  {
+    "username": "Riyana",
+    "password": "oiu",
+    "alamat": "Te",
+    "role": "user"
+  },
+  {
+    "username": "Tisa",
+    "password": "tysaak",
+    "alamat": "Indonesia",
+    "role": "admin"
+  },
+  {
+    "username": "Yatinah",
+    "password": "clorin",
+    "alamat": "Tegalsari",
+    "role": "admin"
+  },
+  {
+    "username": "Ola",
+    "password": "apaya",
+    "alamat": "Wonosobo",
+    "role": "user"
+  },
+  {
+    "username": "Yatina",
+    "password": "a",
+    "alamat": "a",
+    "role": "admin"
+  },
+  {
+    "username": "Tisay",
+    "password": "xxx",
+    "alamat": "Indonesia",
+    "role": "user"
+  },
+  {
+    "username": "Yts",
+    "password": "uuuuu",
+    "alamat": "dhhd",
+    "role": "admin"
+  }
+]

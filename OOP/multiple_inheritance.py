@@ -167,66 +167,66 @@ identity.tampilData()
 #         break
 
 
-class PemilikSaham:
-    def __init__(self):
-        self.ID_PemilikSaham = None
-        self.Nama_PemilikSaham = None
-        self.JumlahInvestasi = None
+# class PemilikSaham:
+#     def __init__(self):
+#         self.ID_PemilikSaham = None
+#         self.Nama_PemilikSaham = None
+#         self.JumlahInvestasi = None
     
-    def Input_dataPemilikSaham(self):
-        print(f"{'Memasukkan Data Pemilik Saham ':^50}")
-        self.ID_PemilikSaham = input("Masukkan ID Pemilik Saham \t:")
-        self.Nama_PemilikSaham = input("Masukkan Nama Pemilik Saham \t:")
-        self.JumlahInvestasi = input("Masukkan JUmlah Investasi \t:")
+#     def Input_dataPemilikSaham(self):
+#         print(f"{'Memasukkan Data Pemilik Saham ':^50}")
+#         self.ID_PemilikSaham = input("Masukkan ID Pemilik Saham \t:")
+#         self.Nama_PemilikSaham = input("Masukkan Nama Pemilik Saham \t:")
+#         self.JumlahInvestasi = input("Masukkan JUmlah Investasi \t:")
 
-    def Tampil_dataPemilikSaham(self):
-        print(" ID pemilk saham \t: ", self.ID_PemilikSaham)
-        print(" Nama pemilik saham \t: ",self.Nama_PemilikSaham)
-        print(" Jumlah Investasi \t: ",self.JumlahInvestasi)
+#     def Tampil_dataPemilikSaham(self):
+#         print(" ID pemilk saham \t: ", self.ID_PemilikSaham)
+#         print(" Nama pemilik saham \t: ",self.Nama_PemilikSaham)
+#         print(" Jumlah Investasi \t: ",self.JumlahInvestasi)
 
-class PemainSepakBola:
-    def __init__(self):
-        self.ID_Pemain = None
-        self.Nama_Pemain = None
-        self.Posisi = None
+# class PemainSepakBola:
+#     def __init__(self):
+#         self.ID_Pemain = None
+#         self.Nama_Pemain = None
+#         self.Posisi = None
     
-    def Input_dataPemain(self):
-        print(f"{'Memasukkan Data Pemain Sepak Bola ':^50}")
-        self.ID_Pemain = input("Masukkan ID Pemain \t:")
-        self.Nama_Pemain = input("Masukkan Nama Pemain \t:")
-        self.Posisi = input("Masukkan Posisi \t:")
+#     def Input_dataPemain(self):
+#         print(f"{'Memasukkan Data Pemain Sepak Bola ':^50}")
+#         self.ID_Pemain = input("Masukkan ID Pemain \t:")
+#         self.Nama_Pemain = input("Masukkan Nama Pemain \t:")
+#         self.Posisi = input("Masukkan Posisi \t:")
 
-    def Tampil_dataPemain(self):
-        print(" ID pemain \t\t: ", self.ID_Pemain)
-        print(" Nama pemain \t\t: ",self.Nama_Pemain)
-        print(" Posisi      \t\t: ",self.Posisi)
+#     def Tampil_dataPemain(self):
+#         print(" ID pemain \t\t: ", self.ID_Pemain)
+#         print(" Nama pemain \t\t: ",self.Nama_Pemain)
+#         print(" Posisi      \t\t: ",self.Posisi)
 
-class ClubSepakBola(PemilikSaham,PemainSepakBola):
-    def __init__(self):
-        self.ID_Club = None
-        self.Nama_Club = None
-        self.Nama_Pelatih = None
-    def Input_dataClub(self):
-        print(f"{'Memasukkan Data CLUB Sepak Bola':^50}")
-        self.ID_Club = input("Masukkan ID Club \t: ")
-        self.Nama_Club = input("Masukkan Nama Club \t: ")
-        self.Nama_Pelatih = input("Masukkan Nama Pelatih \t: ")
-    def Tampil_dataClub(self):
-        print(" ID Club     \t\t: ", self.ID_Club)
-        print(" Nama Club   \t\t: ",self.Nama_Club)
-        print(" Nama Pelatih\t\t: ",self.Nama_Pelatih)
+# class ClubSepakBola(PemilikSaham,PemainSepakBola):
+#     def __init__(self):
+#         self.ID_Club = None
+#         self.Nama_Club = None
+#         self.Nama_Pelatih = None
+#     def Input_dataClub(self):
+#         print(f"{'Memasukkan Data CLUB Sepak Bola':^50}")
+#         self.ID_Club = input("Masukkan ID Club \t: ")
+#         self.Nama_Club = input("Masukkan Nama Club \t: ")
+#         self.Nama_Pelatih = input("Masukkan Nama Pelatih \t: ")
+#     def Tampil_dataClub(self):
+#         print(" ID Club     \t\t: ", self.ID_Club)
+#         print(" Nama Club   \t\t: ",self.Nama_Club)
+#         print(" Nama Pelatih\t\t: ",self.Nama_Pelatih)
 
 
-club1 = ClubSepakBola()
-club1.Input_dataPemilikSaham()
-club1.Input_dataPemain()
-club1.Input_dataClub()
-print()
-print()
-print(f"{'Menampilkan Data':^50}")
-club1.Tampil_dataPemilikSaham()
-club1.Tampil_dataPemain()
-club1.Tampil_dataClub()
+# club1 = ClubSepakBola()
+# club1.Input_dataPemilikSaham()
+# club1.Input_dataPemain()
+# club1.Input_dataClub()
+# print()
+# print()
+# print(f"{'Menampilkan Data':^50}")
+# club1.Tampil_dataPemilikSaham()
+# club1.Tampil_dataPemain()
+# club1.Tampil_dataClub()
 
   
 

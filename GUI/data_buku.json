@@ -1,0 +1,38 @@
+[
+  {
+    "kode": 0,
+    "judul": "",
+    "pengarang": "",
+    "penerbit": "",
+    "isbn": "",
+    "bahasa": "",
+    "bentuk_karya": ""
+  },
+  {
+    "kode": 2703,
+    "judul": "Bulan",
+    "pengarang": "Tere Liye",
+    "penerbit": "Gramedia",
+    "isbn": "2384-3773-3747",
+    "bahasa": "Indonesia",
+    "bentuk_karya": "Fiksi"
+  },
+  {
+    "kode": 7323,
+    "judul": "Laskar Pelangi",
+    "pengarang": "Andrea Hirata",
+    "penerbit": "Gramedia",
+    "isbn": "2636-3663-273",
+    "bahasa": "Indonesia",
+    "bentuk_karya": "Fiksi"
+  },
+  {
+    "kode": 63,
+    "judul": "Manusia",
+    "pengarang": "Yuval Noah",
+    "penerbit": "Gramedia",
+    "isbn": "675-5757-4747",
+    "bahasa": "Indonesia",
+    "bentuk_karya": "Buku"
+  }
+]

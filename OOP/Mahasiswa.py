@@ -17,6 +17,7 @@ class Pendidikan(Mahasiswa):
         Mahasiswa.__init__(self,nama, nim, alamat, jenis_kelamin, status)
  
     def __fk(self):
+        
         self.nama_universitas = input("Masukkan Nama Universsitas : ")
         self.prodi = input("Masukkan Prodi : ")
         self.fakultas = input("Masukkan Fakultas : ")
