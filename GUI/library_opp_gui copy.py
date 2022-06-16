@@ -42,41 +42,43 @@ class Program(ABC):
     @abstractmethod
     def Kembali():
         pass
-  
-  
+    
 class Buku(Program):
     def __init__(self):
         self.buku = []
-        self.data_buku = {} 
+      
     def inputData(self):
-        main_frame = Frame(root,bd=10,bg=getattr(Auth,'wcolor'),relief='solid', padx=10,pady=10).place(relx=0.5, rely=0.22, relheight=0.7, relwidth=0.5, anchor='n')
-        title = tk.Label(root,text="Menambah Buku", font=getattr(Auth,'fontsubtittle'),fg=getattr(Auth,'wcolor'), bg= getattr(Auth,'bcolor'), bd=0)
+        main_frame = Frame(root,bd=10,bg=getattr(Auth,'wcolor'),relief='solid', padx=10,pady=10).place(relx=0.5, rely=0.20, relheight=0.50, relwidth=0.5, anchor='n')
+        title = tk.Label(main_frame,text="Menambah Buku", font=getattr(Auth,'fontsubtittle'),fg=getattr(Auth,'wcolor'), bg= getattr(Auth,'bcolor'), bd=0)
         title.place(relx=0.50,  relwidth=0.5,rely=0.15, anchor='n')
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Kode", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=12).place(relx=0.4, rely=0.27, anchor='n')
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Pengarang", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.35, anchor='n')
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Penerbit", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.43, anchor='n')
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="ISBN", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.51,  anchor='n') 
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Bahasa", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.59, anchor='n')
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Bentuk Karya", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.67,  anchor='n') 
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Judul", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=12).place(relx=0.4, rely=0.75, anchor='n')
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Kode", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=12).place(relx=0.4, rely=0.25, anchor='n')
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Pengarang", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.30, anchor='n')
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Penerbit", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.35, anchor='n')
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="ISBN", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.40,  anchor='n') 
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Bahasa", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.45, anchor='n')
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Bentuk Karya", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.50,  anchor='n') 
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Judul", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=12).place(relx=0.4, rely=0.55, anchor='n')
         self.k_buku = tk.IntVar()
         self.__kode = Entry(main_frame, textvariable = self.k_buku, font=getattr(Auth,'font'))
-        self.__kode.place(relx=0.55, rely=0.27, anchor='n')
+        self.__kode.place(relx=0.55, rely=0.25, anchor='n')
         setattr(Buku,'kode',self.__kode)
         self.pengarang = Entry(main_frame, font=getattr(Auth,'font'))
-        self.pengarang.place(relx=0.55, rely=0.35, anchor='n')
+        self.pengarang.place(relx=0.55, rely=0.30, anchor='n')
         self.penerbit = Entry(main_frame, font=getattr(Auth,'font'))
-        self.penerbit.place(relx=0.55, rely=0.43, anchor='n')
+        self.penerbit.place(relx=0.55, rely=0.35, anchor='n')
         self.isbn = Entry(main_frame, font=getattr(Auth,'font'))
-        self.isbn.place(relx=0.55, rely=0.51, anchor='n')
+        self.isbn.place(relx=0.55, rely=0.40, anchor='n')
         self.bahasa = Entry(main_frame, font=getattr(Auth,'font'))
-        self.bahasa.place(relx=0.55, rely=0.59, anchor='n')
+        self.bahasa.place(relx=0.55, rely=0.45, anchor='n')
         self.bentuk_karya = Entry(main_frame, font=getattr(Auth,'font'))
-        self.bentuk_karya.place(relx=0.55, rely=0.67, anchor='n')
+        self.bentuk_karya.place(relx=0.55, rely=0.50, anchor='n')
         self.judul = Entry(main_frame,font=getattr(Auth,'font') )
-        self.judul.place(relx=0.55, rely=0.75, anchor='n')
-        self.bukutambah_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=30, text='Simpan', font=getattr(Auth,'font'), relief=SOLID,cursor='hand2',command=self.Proses_menambahBuku)
-        self.bukutambah_btn.place(relx=0.5, rely=0.82, anchor='n')
+        self.judul.place(relx=0.55, rely=0.55, anchor='n')
+        self.bukutambah_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=20, text='Simpan', font=getattr(Auth,'font'), relief=SOLID,command=self.Proses_menambahBuku)
+        self.bukutambah_btn.place(relx=0.4, rely=0.60, anchor='n')
+        button = tk.Button(root, cursor='hand2', bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=20,text=f"Kembali", font=getattr(Auth,'font'), relief=SOLID,  command=lambda: Auth.pilihanAdmin(self))
+        button.place(relx=0.50, rely=0.60)  
+        self.tampilBukuAll()
 
     def Proses_menambahBuku(self):
         check_counter=0
@@ -125,20 +127,20 @@ class Buku(Program):
                 x.opsiWrite('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/data_buku.json',self.d_buku)
                 print(self.d_buku)  
                 messagebox.showinfo('Sukses', 'Data Buku Telah disimpan')
-                x.pilihanAdmin()    
+                Auth.tampilBukuAll(self)   
             else:
                     messagebox.showerror('Peringatan', peringatan)
         except TclError:
                 messagebox.showerror('Peringatan', "Kode harus berupa angka")
             
     def editData(self):
-        main_frame = Frame(root,bd=10,bg=getattr(Auth,'wcolor'),relief='solid', padx=10,pady=10).place(relx=0.5, rely=0.22, relheight=0.7, relwidth=0.5, anchor='n')
-        title = tk.Label(root,text="Mengedit Buku", font=getattr(Auth,'fontsubtittle'),fg=getattr(Auth,'wcolor'), bg= getattr(Auth,'bcolor'), bd=0)
+        main_frame = Frame(root,bd=10,bg=getattr(Auth,'wcolor'),relief='solid', padx=10,pady=10).place(relx=0.5, rely=0.20, relheight=0.50, relwidth=0.5, anchor='n')
+        title = tk.Label(main_frame,text="Mengedit Buku", font=getattr(Auth,'fontsubtittle'),fg=getattr(Auth,'wcolor'), bg= getattr(Auth,'bcolor'), bd=0)
         title.place(relx=0.50,  relwidth=0.5,rely=0.15, anchor='n')
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Kode", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=12).place(relx=0.4, rely=0.27, anchor='n')
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Kode", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=12).place(relx=0.4, rely=0.25, anchor='n')
         self.k_buku = tk.IntVar()
         self.__kode = Entry(main_frame,textvariable = self.k_buku,font=getattr(Auth,'font') )
-        self.__kode.place(relx=0.55, rely=0.27, anchor='n')
+        self.__kode.place(relx=0.55, rely=0.25, anchor='n')
         setattr(Buku,'kode',self.__kode)
         def update():
             try:
@@ -148,35 +150,36 @@ class Buku(Program):
                 kode = self.k_buku.get()
                 if(kode in self.list_value):
                     self.bukuedit_btn.after(100, self.bukuedit_btn.destroy)
+                    self.button.after(100, self.button.destroy)
                     index_buku = self.list_value.index(kode)
-                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="Pengarang", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.35, anchor='n')
-                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="Penerbit", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.43, anchor='n')
-                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="ISBN", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.51,  anchor='n') 
-                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="Bahasa", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.59, anchor='n')
-                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="Bentuk Karya", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.67,  anchor='n') 
-                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="Judul", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=12).place(relx=0.4, rely=0.75, anchor='n')
+                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="Pengarang", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.30, anchor='n')
+                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="Penerbit", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.35, anchor='n')
+                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="ISBN", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.40,  anchor='n') 
+                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="Bahasa", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.45, anchor='n')
+                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="Bentuk Karya", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.50,  anchor='n') 
+                    Label(main_frame, fg=getattr(Auth,'wcolor'), text="Judul", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=12).place(relx=0.4, rely=0.55, anchor='n')
                     self.pengarang = Entry(main_frame, font=getattr(Auth,'font'))
-                    self.pengarang.place(relx=0.55, rely=0.35, anchor='n')
+                    self.pengarang.place(relx=0.55, rely=0.30, anchor='n')
                     placeholder_text = self.d_buku[index_buku]['pengarang']
                     self.pengarang.insert(0, placeholder_text)
                     self.penerbit = Entry(main_frame, font=getattr(Auth,'font'))
-                    self.penerbit.place(relx=0.55, rely=0.43, anchor='n')
+                    self.penerbit.place(relx=0.55, rely=0.35, anchor='n')
                     placeholder_text = self.d_buku[index_buku]['penerbit']
                     self.penerbit.insert(0, placeholder_text)
                     self.isbn = Entry(main_frame, font=getattr(Auth,'font'))
-                    self.isbn.place(relx=0.55, rely=0.51, anchor='n')
+                    self.isbn.place(relx=0.55, rely=0.40, anchor='n')
                     placeholder_text = self.d_buku[index_buku]['isbn']
                     self.isbn.insert(0, placeholder_text)
                     self.bahasa = Entry(main_frame, font=getattr(Auth,'font'))
-                    self.bahasa.place(relx=0.55, rely=0.59, anchor='n')
+                    self.bahasa.place(relx=0.55, rely=0.45, anchor='n')
                     placeholder_text = self.d_buku[index_buku]['bahasa']
                     self.bahasa.insert(0, placeholder_text)
                     self.bentuk_karya = Entry(main_frame, font=getattr(Auth,'font'))
-                    self.bentuk_karya.place(relx=0.55, rely=0.67, anchor='n')
+                    self.bentuk_karya.place(relx=0.55, rely=0.50, anchor='n')
                     placeholder_text = self.d_buku[index_buku]['bentuk_karya']
                     self.bentuk_karya.insert(0, placeholder_text)
                     self.judul = Entry(main_frame,font=getattr(Auth,'font') )
-                    self.judul.place(relx=0.55, rely=0.75, anchor='n')
+                    self.judul.place(relx=0.55, rely=0.55, anchor='n')
                     placeholder_text = self.d_buku[index_buku]['judul']
                     self.judul.insert(0, placeholder_text)
                     def Proses_editData():
@@ -188,27 +191,47 @@ class Buku(Program):
                         self.d_buku[index_buku]['bentuk_karya'] =  self.bentuk_karya.get()
                         x.opsiWrite('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/data_buku.json',self.d_buku)
                         messagebox.showinfo('Sukses', 'Telah berhasil mengedit buku')
-                        x.pilihanAdmin() 
-                    self.bukutambah_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=30, text='Simpan', font=getattr(Auth,'font'), relief=SOLID,cursor='hand2',command=Proses_editData)
-                    self.bukutambah_btn.place(relx=0.5, rely=0.82, anchor='n')
+                        self.tampilBukuAll() 
+                    self.bukuedit_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=20, text='Simpan', font=getattr(Auth,'font'), relief=SOLID,command=Proses_editData)
+                    self.bukuedit_btn.place(relx=0.4, rely=0.60, anchor='n')
+                    self.button = tk.Button(root, cursor='hand2', bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=20,text=f"Kembali", font=getattr(Auth,'font'), relief=SOLID,  command=lambda: Auth.pilihanAdmin(self))
+                    self.button.place(relx=0.50, rely=0.60)  
                 else:
                     print(f'Maaf tidak ada buku dengan kode tsb')
                     messagebox.showwarning('Peringatan', 'Maaf tidak ada buku dengan kode tersebut')
             except TclError:
                 messagebox.showerror('Peringatan', "Kode harus berupa angka")
-        self.bukuedit_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=30, text='Edit', font=getattr(Auth,'font'), relief=SOLID,cursor='hand2',command=update)
-        self.bukuedit_btn.place(relx=0.5, rely=0.4, anchor='n')
-    
+        self.bukuedit_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=20, text='Edit', font=getattr(Auth,'font'), relief=SOLID,command=update)
+        self.bukuedit_btn.place(relx=0.4, rely=0.30, anchor='n')
+        self.button = tk.Button(root, cursor='hand2', bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=20,text=f"Kembali", font=getattr(Auth,'font'), relief=SOLID,  command=lambda: Auth.pilihanAdmin(self))
+        self.button.place(relx=0.50, rely=0.30)  
+        self.tampilBukuAll()
+
     def tampilData(self):
+        self.tampilBuku()
+        button = tk.Button(root, cursor='hand2', text=f"Kembali", font=40, command=lambda: Auth.pilihanAdmin(self))
+        button.place(relx=0.25, rely=0.9, relheight=0.05, relwidth=0.5)  
+    def tampilBukuUser(self):
+        self.tampilBuku()
+        button = tk.Button(root, cursor='hand2', text=f"Kembali", font=40, command=lambda: Auth.pilihanUser(self))
+        button.place(relx=0.25, rely=0.9, relheight=0.05, relwidth=0.5)  
+    def tampilBukuPetugas(self):
+        self.tampilBuku()
+        button = tk.Button(root, cursor='hand2', text=f"Kembali", font=40, command=lambda: Auth.pilihanPetugas(self))
+        button.place(relx=0.25, rely=0.9, relheight=0.05, relwidth=0.5)  
+
+    def tampilBuku(self):
         self.d_buku = x.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/data_buku.json')
         title_frame = tk.Frame(root)
         title_frame.place(relx=0.5, rely=0.05, relwidth=0.5, relheight=0.1, anchor='n')
         title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Buku Perpustakaan")
         title.place(relx=0.25, relheight=1, relwidth=0.5)
-        main_frame = tk.Frame(root, bg=getattr(Auth,'bcolor'), bd=10)
-        main_frame.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n')
-        title_frame = tk.Frame(root, bg=getattr(Auth,'bcolor'), bd=10)
-        title_frame.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.1, anchor='n')
+        main_frameB = tk.Frame(root, bg=getattr(Auth,'bcolor'), bd=10)
+        main_frameB.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n')
+        main_frame = tk.Frame(main_frameB, bg=getattr(Auth,'wcolor'), bd=10)
+        main_frame.place(relx=0.5, rely=0.02, relwidth=1, relheight=0.7, anchor='n')
+        title_framej = tk.Frame(main_frameB, bg="grey")
+        title_framej.place(relx=0.5, rely=0, relwidth=1, relheight=0.05, anchor='n')
         index_buku = []
         kode_book = []
         judul_book =[]
@@ -222,8 +245,8 @@ class Buku(Program):
             print(re)
             for no,index in enumerate (books[0].keys(),0):
                 print(f'{no} {index}')
-                index_buku.append(Label(title_frame,text=f'{index}',width=15,fg=getattr(Auth,'wcolor'), bg='#4161AA'))
-                index_buku[no].grid(row=0,column=no,pady=30,padx=10)
+                index_buku.append(Label(title_framej,text=f'{index}',width=15, bg="grey"))
+                index_buku[no].grid(row=0,column=no,padx=10,pady=0)
             for index in range(len(re)):
                 tampil_kode = books[index]['kode']
                 tampil_judul = books[index]['judul']
@@ -232,25 +255,72 @@ class Buku(Program):
                 tampil_isbn = books[index]['isbn']
                 tampil_bahasa = books[index]['bahasa']
                 tampil_karya = books[index]['bentuk_karya']
-                kode_book.append(Label(main_frame,text=f'{tampil_kode}',width=15))
-                kode_book[index].grid(row=index,column=0,padx=10,pady=20)
-                judul_book.append(Label(main_frame,text=f'{tampil_judul}',width=15))
-                judul_book[index].grid(row=index,column=1,padx=10,pady=20)
-                pengarang_book.append(Label(main_frame,text=f'{tampil_pengarang}',width=15))
-                pengarang_book[index].grid(row=index,column=2,padx=10,pady=20)
-                penerbit_book.append(Label(main_frame,text=f'{tampil_penerbit}',width=15))
-                penerbit_book[index].grid(row=index,column=3,padx=10,pady=20)
-                isbn_book.append(Label(main_frame,text=f'{tampil_isbn}',width=15))
-                isbn_book[index].grid(row=index,column=4,padx=10,pady=20)
-                bahasa_book.append(Label(main_frame,text=f'{tampil_bahasa}',width=15))
-                bahasa_book[index].grid(row=index,column=5,padx=10,pady=20)
-                bentuk_karya.append(Label(main_frame,text=f'{tampil_karya}',width=15))
-                bentuk_karya[index].grid(row=index,column=6,padx=10,pady=20)
+                kode_book.append(Label(main_frame,text=f'{tampil_kode}',width=15,bg=getattr(Auth,'wcolor')))
+                kode_book[index].grid(row=index,column=0,padx=10,pady=5)
+                judul_book.append(Label(main_frame,text=f'{tampil_judul}',width=15,bg=getattr(Auth,'wcolor')))
+                judul_book[index].grid(row=index,column=1,padx=10,pady=5)
+                pengarang_book.append(Label(main_frame,text=f'{tampil_pengarang}',width=15,bg=getattr(Auth,'wcolor')))
+                pengarang_book[index].grid(row=index,column=2,padx=10,pady=5)
+                penerbit_book.append(Label(main_frame,text=f'{tampil_penerbit}',width=15,bg=getattr(Auth,'wcolor')))
+                penerbit_book[index].grid(row=index,column=3,padx=10,pady=5)
+                isbn_book.append(Label(main_frame,text=f'{tampil_isbn}',width=15,bg=getattr(Auth,'wcolor')))
+                isbn_book[index].grid(row=index,column=4,padx=10,pady=5)
+                bahasa_book.append(Label(main_frame,text=f'{tampil_bahasa}',width=15,bg=getattr(Auth,'wcolor')))
+                bahasa_book[index].grid(row=index,column=5,padx=10,pady=5)
+                bentuk_karya.append(Label(main_frame,text=f'{tampil_karya}',width=15,bg=getattr(Auth,'wcolor')))
+                bentuk_karya[index].grid(row=index,column=6,padx=10,pady=5)
                 print(tampil_kode)
-                button = tk.Button(root, cursor='hand2', text=f"Kembali", font=40, command=lambda: Auth.pilihanAdmin(self))
-                button.place(relx=0.25, rely=0.9, relheight=0.05, relwidth=0.5)  
         getDataBuku(self.d_buku)
-
+    def tampilBukuAll(self):
+        self.d_buku = x.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/data_buku.json')
+        title_frame = tk.Frame(root)
+        title_frame.place(relx=0.5, rely=0.05, relwidth=0.5, relheight=0.1, anchor='n')
+        title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Buku Perpustakaan")
+        title.place(relx=0.25, relheight=0.4, relwidth=0.5)
+        main_frameB = tk.Frame(root, bg=getattr(Auth,'bcolor'), bd=10)
+        main_frameB.place(relx=0.5, rely=0.70, relwidth=0.8, relheight=0.25, anchor='n')
+        main_frame = tk.Frame(main_frameB, bg=getattr(Auth,'wcolor'), bd=10)
+        main_frame.place(relx=0.5, rely=0.02, relwidth=1, relheight=0.9, anchor='n')
+        title_framej = tk.Frame(main_frameB, bg="grey")
+        title_framej.place(relx=0.5, rely=0, relwidth=1, relheight=0.15, anchor='n')
+        index_buku = []
+        kode_book = []
+        judul_book =[]
+        penerbit_book=[]
+        pengarang_book=[]
+        isbn_book = []
+        bahasa_book=[]
+        bentuk_karya=[]
+        def getDataBuku(books):
+            re = {x:self.d_buku[x]['kode'] for x in range(len(books))}
+            print(re)
+            for no,index in enumerate (books[0].keys(),0):
+                print(f'{no} {index}')
+                index_buku.append(Label(title_framej,text=f'{index}',width=15, bg="grey"))
+                index_buku[no].grid(row=0,column=no,padx=10,pady=0)
+            for index in range(len(re)):
+                tampil_kode = books[index]['kode']
+                tampil_judul = books[index]['judul']
+                tampil_pengarang = books[index]['pengarang']
+                tampil_penerbit = books[index]['penerbit']
+                tampil_isbn = books[index]['isbn']
+                tampil_bahasa = books[index]['bahasa']
+                tampil_karya = books[index]['bentuk_karya']
+                kode_book.append(Label(main_frame,text=f'{tampil_kode}',width=15,bg=getattr(Auth,'wcolor')))
+                kode_book[index].grid(row=index,column=0,padx=10,pady=5)
+                judul_book.append(Label(main_frame,text=f'{tampil_judul}',width=15,bg=getattr(Auth,'wcolor')))
+                judul_book[index].grid(row=index,column=1,padx=10,pady=5)
+                pengarang_book.append(Label(main_frame,text=f'{tampil_pengarang}',width=15,bg=getattr(Auth,'wcolor')))
+                pengarang_book[index].grid(row=index,column=2,padx=10,pady=5)
+                penerbit_book.append(Label(main_frame,text=f'{tampil_penerbit}',width=15,bg=getattr(Auth,'wcolor')))
+                penerbit_book[index].grid(row=index,column=3,padx=10,pady=5)
+                isbn_book.append(Label(main_frame,text=f'{tampil_isbn}',width=15,bg=getattr(Auth,'wcolor')))
+                isbn_book[index].grid(row=index,column=4,padx=10,pady=5)
+                bahasa_book.append(Label(main_frame,text=f'{tampil_bahasa}',width=15,bg=getattr(Auth,'wcolor')))
+                bahasa_book[index].grid(row=index,column=5,padx=10,pady=5)
+                bentuk_karya.append(Label(main_frame,text=f'{tampil_karya}',width=15,bg=getattr(Auth,'wcolor')))
+                bentuk_karya[index].grid(row=index,column=6,padx=10,pady=5)
+        getDataBuku(self.d_buku)
 
     def hapusData(self):
         rooty = tk.Frame(root, bg= getattr(Auth,'bcolor'), bd=15)
@@ -275,7 +345,7 @@ class Buku(Program):
                     del self.d_buku[index_buku] 
                     x.opsiWrite('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/data_buku.json',self.d_buku)
                     messagebox.showinfo('Sukses', 'Buku telah berhasil dihapus')
-                    x.pilihanAdmin() 
+                    self.tampilBukuAll() 
                 else:
                     print(f'Maaf tidak ada buku dengan kode tersebut')
                     messagebox.showwarning('Peringatan', f'Maaf tidak ada buku dengan kode tersebut')
@@ -283,90 +353,44 @@ class Buku(Program):
                 messagebox.showerror('Peringatan', "Kode harus berupa angka")
             except AttributeError:
                 messagebox.showerror('Peringatan', "Ada kesalahan pada kode buku")
-        self.bukuhapus_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=30, text='Hapus', font=getattr(Auth,'font'), relief=SOLID,cursor='hand2',command=delete)
-        self.bukuhapus_btn.place(relx=0.5, rely=0.4, anchor='n')
-       
+        self.bukuhapus_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=17, text='Hapus', font=getattr(Auth,'font'), relief=SOLID,command=delete)
+        self.bukuhapus_btn.place(relx=0.4, rely=0.4, anchor='n')
+        button = tk.Button(root, cursor='hand2', bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=17,text=f"Kembali", font=getattr(Auth,'font'), relief=SOLID,  command=lambda: Auth.pilihanAdmin(self))
+        button.place(relx=0.50, rely=0.4)  
+        self.tampilBukuAll()
+
 # PINJAM KEMBALI BUKU
 class Pinjam(Program):
     def __init__(self):
         self.pinjam = []
-        self.d_pinjam = {}
         global kode_buku
     def tampilBuku(self):
-        self.d_buku = x.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/data_buku.json')
-        title_frame = tk.Frame(root)
-        title_frame.place(relx=0.5, rely=0.05, relwidth=0.5, relheight=0.1, anchor='n')
-        title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Buku Perpustakaan")
-        title.place(relx=0.25, relheight=1, relwidth=0.5)
-        main_frame = tk.Frame(root, bg=getattr(Auth,'bcolor'), bd=10)
-        main_frame.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n')
-        title_frame = tk.Frame(root, bg=getattr(Auth,'bcolor'), bd=10)
-        title_frame.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.1, anchor='n')
-        index_buku = []
-        kode_book = []
-        judul_book =[]
-        penerbit_book=[]
-        pengarang_book=[]
-        isbn_book = []
-        bahasa_book=[]
-        bentuk_karya=[]
-        def getDataBuku(books):
-            re = {x:self.d_buku[x]['kode'] for x in range(len(books))}
-            print(re)
-            for no,index in enumerate (books[0].keys(),0):
-                print(f'{no} {index}')
-                index_buku.append(Label(title_frame,text=f'{index}',width=15,fg=getattr(Auth,'wcolor'), bg='#4161AA'))
-                index_buku[no].grid(row=0,column=no,pady=30,padx=10)
-            for index in range(len(re)):
-                tampil_kode = books[index]['kode']
-                tampil_judul = books[index]['judul']
-                tampil_pengarang = books[index]['pengarang']
-                tampil_penerbit = books[index]['penerbit']
-                tampil_isbn = books[index]['isbn']
-                tampil_bahasa = books[index]['bahasa']
-                tampil_karya = books[index]['bentuk_karya']
-                kode_book.append(Label(main_frame,text=f'{tampil_kode}',width=15))
-                kode_book[index].grid(row=index,column=0,padx=10,pady=20)
-                judul_book.append(Label(main_frame,text=f'{tampil_judul}',width=15))
-                judul_book[index].grid(row=index,column=1,padx=10,pady=20)
-                pengarang_book.append(Label(main_frame,text=f'{tampil_pengarang}',width=15))
-                pengarang_book[index].grid(row=index,column=2,padx=10,pady=20)
-                penerbit_book.append(Label(main_frame,text=f'{tampil_penerbit}',width=15))
-                penerbit_book[index].grid(row=index,column=3,padx=10,pady=20)
-                isbn_book.append(Label(main_frame,text=f'{tampil_isbn}',width=15))
-                isbn_book[index].grid(row=index,column=4,padx=10,pady=20)
-                bahasa_book.append(Label(main_frame,text=f'{tampil_bahasa}',width=15))
-                bahasa_book[index].grid(row=index,column=5,padx=10,pady=20)
-                bentuk_karya.append(Label(main_frame,text=f'{tampil_karya}',width=15))
-                bentuk_karya[index].grid(row=index,column=6,padx=10,pady=20)
-                print(tampil_kode)
-                button = tk.Button(root, cursor='hand2', text=f"Kembali", font=40, command=lambda: Auth.pilihanUser(self))
-                button.place(relx=0.25, rely=0.9, relheight=0.05, relwidth=0.5)  
-        getDataBuku(self.d_buku)
+        Auth.tampilBuku()
+        button = tk.Button(root, cursor='hand2', text=f"Kembali", font=40, command=lambda: Auth.pilihanUser(self))
+        button.place(relx=0.25, rely=0.9, relheight=0.05, relwidth=0.5)      
 
     def PinjamBuku(self):
-        main_frame = Frame(root,bd=10,bg=getattr(Auth,'wcolor'),relief='solid', padx=10,pady=10).place(relx=0.5, rely=0.23, relheight=0.6, relwidth=0.5, anchor='n')
+        main_frame = Frame(root,bd=10,bg=getattr(Auth,'wcolor'),relief='solid', padx=10,pady=10).place(relx=0.5, rely=0.23, relheight=0.475, relwidth=0.5, anchor='n')
         title = tk.Label(root,text="Pinjam Buku", font=getattr(Auth,'fontsubtittle'),fg=getattr(Auth,'wcolor'), bg= getattr(Auth,'bcolor'), bd=15)
         title.place(relx=0.50,  relwidth=0.5,rely=0.15, anchor='n')
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Nama Peminjam", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=20).place(relx=0.4, rely=0.3, anchor='n')
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Kode Buku Peminjam", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=20).place(relx=0.4, rely=0.25, anchor='n')
         self.nama_peminjam = Entry(main_frame,font=getattr(Auth,'font'))
         placeholder_text = Auth.username.get()
         self.nama_peminjam.insert(0, placeholder_text)
-        self.nama_peminjam.place(relx=0.60, rely=0.3, anchor='n')
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Kode Buku", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=20).place(relx=0.4, rely=0.38, anchor='n')
+        self.nama_peminjam.place(relx=0.60, rely=0.25, anchor='n')
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Kode Buku", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=20).place(relx=0.4, rely=0.3, anchor='n')
         self.k_buku = tk.IntVar()
         self.__kode_buku = Entry(main_frame,font=getattr(Auth,'font'),textvariable=self.k_buku)
-        self.__kode_buku.place(relx=0.60, rely=0.38, anchor='n')
+        self.__kode_buku.place(relx=0.60, rely=0.3, anchor='n')
         setattr(Pinjam,'kode_buku',self.__kode_buku)
         self.denda = ['Terlambat pada minggu pertama  = Rp.5000',
                 'Terlambat pada minggu kedua  = Rp.7000', 
                 'Terlambat pada minggu ketiga = Rp.9000', 
                 'Terlambat pada minggu ke empat = Rp.11.000']  
         denda_frame = Frame(root, bg='#483D8B', bd=5)
-        denda_frame.place(relx=0.5, rely=0.55, relwidth=0.30, relheight=0.23, anchor='n')
+        denda_frame.place(relx=0.5, rely=0.45, relwidth=0.30, relheight=0.23, anchor='n')
         for w,k in enumerate(self.denda,4):
             Label(denda_frame,text=k,width=52,pady=9).grid(row=w,column=1)
-     
         def proses_pinjam():
             try:
                 self.d_buku = x.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/data_buku.json')
@@ -375,7 +399,6 @@ class Pinjam(Program):
                 kode_buku = self.k_buku.get()
                 if(kode_buku in self.list_value):
                     self.d_pinjam = {}
-                    self.pinjam = []
                     index_buku = self.list_value.index(kode_buku)
                     print(index_buku)
                     self.d_pinjam['nama_peminjam'] = self.nama_peminjam.get()
@@ -391,10 +414,9 @@ class Pinjam(Program):
                     self.d_pinjam['tanggal_pinjam'] = t_pinjam
                     self.d_pj = x.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/p_buku.json') 
                     self.d_pj.append(self.d_pinjam)
-                    x.opsiWrite('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/p_buku.json',self.d_pj)
-                    print(self.pinjam)  
+                    x.opsiWrite('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/p_buku.json',self.d_pj) 
                     messagebox.showinfo('Sukses', 'Buku berhasil dipinjam')
-                    x.pilihanUser()    
+                    x.tampilBukuAll()    
                 else:
                     print("Maaf tidak ada buku dengan kode")
                     messagebox.showwarning('Peringatan', f"Maaf tidak ada buku dengan kode tersebut")
@@ -403,30 +425,32 @@ class Pinjam(Program):
             except AssertionError as error:
                     print(error)
                     messagebox.showinfo('Peringatan', f'Buku sedang dipinjam')
-        self.bukupinjam_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=30, text='Pinjam', font=getattr(Auth,'font'), relief=SOLID,cursor='hand2',command=proses_pinjam)
-        self.bukupinjam_btn.place(relx=0.5, rely=0.45, anchor='n')       
+        self.bukupinjam_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=20, text='Pinjam', font=getattr(Auth,'font'), relief=SOLID,cursor='hand2',command=lambda:proses_pinjam())
+        self.bukupinjam_btn.place(relx=0.4, rely=0.35, anchor='n') 
+        self.button = tk.Button(root, cursor='hand2', bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=20,text=f"Kembali", font=getattr(Auth,'font'), relief=SOLID,  command=lambda: Auth.pilihanPetugas(self))
+        self.button.place(relx=0.51, rely=0.35) 
+        Auth.tampilBukuAll(self)      
 
              
     def Kembali(self):
-        main_frame = Frame(root,bd=10,bg=getattr(Auth,'wcolor'),relief='solid', padx=10,pady=10).place(relx=0.5, rely=0.23, relheight=0.6, relwidth=0.5, anchor='n')
+        main_frame = Frame(root,bd=10,bg=getattr(Auth,'wcolor'),relief='solid', padx=10,pady=10).place(relx=0.5, rely=0.23, relheight=0.475, relwidth=0.5, anchor='n')
         title = tk.Label(root,text="Kembali Buku", font=getattr(Auth,'fontsubtittle'),fg=getattr(Auth,'wcolor'), bg= getattr(Auth,'bcolor'), bd=15)
         title.place(relx=0.50,  relwidth=0.5,rely=0.15, anchor='n')
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Kode Buku Peminjam", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=20).place(relx=0.4, rely=0.3, anchor='n')
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Kode Buku Peminjam", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=20).place(relx=0.4, rely=0.25, anchor='n')
         self.k_buku = tk.IntVar()
         self.kode_buku = Entry(main_frame,font=getattr(Auth,'font'),textvariable = self.k_buku )
-        self.kode_buku.place(relx=0.60, rely=0.3, anchor='n')
-        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Tanggal (d-m-y)", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=20).place(relx=0.4, rely=0.38, anchor='n')
+        self.kode_buku.place(relx=0.60, rely=0.25, anchor='n')
+        Label(main_frame, fg=getattr(Auth,'wcolor'), text="Tanggal (d-m-y)", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=20).place(relx=0.4, rely=0.30, anchor='n')
         self.tgl = Entry(main_frame,font=getattr(Auth,'font') )
-        self.tgl.place(relx=0.60, rely=0.38, anchor='n')
+        self.tgl.place(relx=0.60, rely=0.30, anchor='n')
         self.denda = ['Terlambat pada minggu pertama  = Rp.5000',
                 'Terlambat pada minggu kedua  = Rp.7000', 
                 'Terlambat pada minggu ketiga = Rp.9000', 
                 'Terlambat pada minggu ke empat = Rp.11.000']  
         denda_frame = Frame(root, bg='#483D8B', bd=5)
-        denda_frame.place(relx=0.5, rely=0.55, relwidth=0.30, relheight=0.23, anchor='n')
+        denda_frame.place(relx=0.5, rely=0.45, relwidth=0.30, relheight=0.23, anchor='n')
         for w,k in enumerate(self.denda,4):
             Label(denda_frame,text=k,width=52,pady=9).grid(row=w,column=1)
-
         def proses_kembali():
             try:
                 self.p_buku = x.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/p_buku.json')
@@ -463,9 +487,7 @@ class Pinjam(Program):
                                     denda_akhir4 = denda_akhir3 +2000
                                     total_denda = denda_akhir4
                                     hari_tp = jml_hari-30
-                                    messagebox.showinfo('Peringatan', f"Maaf Anda terlambat mengembalikan buku selama lebih dari 30 hari. Anda tidak boleh meminjam buku selama {hari_tp} hari")
-                                    print()   
-                                
+                                    messagebox.showinfo('Peringatan', f"Maaf Anda terlambat mengembalikan buku selama lebih dari 30 hari. Anda tidak boleh meminjam buku selama {hari_tp} hari")  
                         print(f"Maaf Anda terlambat mengembalikan buku,Anda akan dikenakan denda sebesar Rp.{total_denda} ")
                         messagebox.showinfo('Peringatan',f"Maaf Anda terlambat mengembalikan buku,Anda akan dikenakan denda sebesar Rp.{total_denda} ")
                     else:
@@ -473,19 +495,107 @@ class Pinjam(Program):
                     del self.d_pj[index_buku]
                     x.opsiWrite('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/p_buku.json',self.d_pj)
                     messagebox.showinfo('Sukses', 'Buku telah berhasil dikembalikan')
-                    x.pilihanUser() 
-
+                    self.tampilPinjamAll()
                 else:
-                    # print("Maaf tidak ada buku dengan kode")
                     messagebox.showwarning('Peringatan',f'Maaf Tidak ada buku dengan kode tersebut')
             except KeyError:
                  messagebox.showerror('Error',f'Ada kesalahan penyimpanan')
             except ValueError:
                  messagebox.showerror('Error',f'Ada kesalahan list')
-        self.bukukembali_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=30, text='Kembali', font=getattr(Auth,'font'), relief=SOLID,cursor='hand2',command=proses_kembali)
-        self.bukukembali_btn.place(relx=0.51, rely=0.45, anchor='n')  
-   
-    
+        self.bukukembali_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=20, text='Kembalikan Buku', font=getattr(Auth,'font'), relief=SOLID,command=lambda:proses_kembali())
+        self.bukukembali_btn.place(relx=0.4, rely=0.35, anchor='n')
+        self.button = tk.Button(root, cursor='hand2', bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=20,text=f"Kembali", font=getattr(Auth,'font'), relief=SOLID,  command=lambda: Auth.pilihanPetugas(self))
+        self.button.place(relx=0.51, rely=0.35) 
+        self.tampilPinjamAll() 
+    def tampilDataPinjamPetugas(self):
+        self.tampilDataPinjam()
+        button = tk.Button(root, cursor='hand2', text=f"Kembali", font=40, command=lambda: Auth.pilihanPetugas(self))
+        button.place(relx=0.25, rely=0.9, relheight=0.05, relwidth=0.5)  
+    def tampilDataPinjamAdmin(self):
+        self.tampilDataPinjam()
+        button = tk.Button(root, cursor='hand2', text=f"Kembali", font=40, command=lambda: Auth.pilihanAdmin(self))
+        button.place(relx=0.25, rely=0.9, relheight=0.05, relwidth=0.5)  
+    def tampilDataPinjam(self):
+        self.d_pinjam = self.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/p_buku.json')       
+        main_fram = tk.Frame(root, bg=getattr(Auth,'bcolor'), bd=10)
+        main_fram.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n')
+        main_frame = tk.Frame(main_fram, bg=getattr(Auth,'wcolor'), bd=10)
+        main_frame.place(relx=0.5, rely=0.02, relwidth=0.68, relheight=0.7, anchor='n')
+        title_framej = tk.Frame(main_fram, bg="grey")
+        title_framej.place(relx=0.5, rely=0, relwidth=0.68, relheight=0.05, anchor='n')
+        index_pinjam=[]
+        nama_peminjam = []
+        kode_buku = []
+        judul =[]
+        pengarang=[]
+        tanggal_pinjam = []
+        def getDataPinjam(pinjam):
+            re = {x:self.d_pinjam[x]['nama_peminjam'] for x in range(len(pinjam))}
+            print(re)
+            for no,index in enumerate (pinjam[0].keys(),0):
+                print(f'{no} {index}')
+                index_pinjam.append(Label(title_framej,text=f'{index}',width=15, bg="grey"))
+                index_pinjam[no].grid(row=0,column=no,padx=10,pady=0)
+            for index in range(len(re)):
+                tampil_nama_peminjam = pinjam[index]['nama_peminjam']
+                tampil_kode_buku = pinjam[index]['kode_buku']
+                tampil_judul = pinjam[index]['judul']
+                tampil_pengarang = pinjam[index]['pengarang ']
+                tampil_tanggal_pinjam = pinjam[index]['tanggal_pinjam']
+                nama_peminjam.append(Label(main_frame,text=f'{tampil_nama_peminjam}',width=15,bg=getattr(Auth,'wcolor')))
+                nama_peminjam[index].grid(row=index,column=0,padx=10,pady=5)
+                kode_buku.append(Label(main_frame,text=f'{tampil_kode_buku}',width=15,bg=getattr(Auth,'wcolor')))
+                kode_buku[index].grid(row=index,column=1,padx=10,pady=5)
+                judul.append(Label(main_frame,text=f'{tampil_judul}',width=15,bg=getattr(Auth,'wcolor')))
+                judul[index].grid(row=index,column=2,padx=10,pady=5)
+                pengarang.append(Label(main_frame,text=f'{tampil_pengarang}',width=15,bg=getattr(Auth,'wcolor')))
+                pengarang[index].grid(row=index,column=3,padx=10,pady=5)
+                tanggal_pinjam.append(Label(main_frame,text=f'{tampil_tanggal_pinjam}',width=15,bg=getattr(Auth,'wcolor')))
+                tanggal_pinjam[index].grid(row=index,column=4,padx=10,pady=5)
+        getDataPinjam(self.d_pinjam)
+      
+    def tampilPinjamAll(self):
+        self.d_pinjam = self.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/p_buku.json')       
+        title_frame = tk.Frame(root)
+        title_frame.place(relx=0.5, rely=0.05, relwidth=0.5, relheight=0.1, anchor='n')
+        title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Daftar Peminjam Buku")
+        title.place(relx=0.25, relheight=0.4, relwidth=0.5)
+        main_frameB = tk.Frame(root, bg=getattr(Auth,'bcolor'), bd=10)
+        main_frameB.place(relx=0.5, rely=0.70, relwidth=0.8, relheight=0.25, anchor='n')
+        main_frame = tk.Frame(main_frameB, bg=getattr(Auth,'wcolor'), bd=10)
+        main_frame.place(relx=0.5, rely=0.02, relwidth=0.68, relheight=0.9, anchor='n')
+        title_framej = tk.Frame(main_frameB, bg="grey")
+        title_framej.place(relx=0.5, rely=0, relwidth=0.68, relheight=0.15, anchor='n')
+        index_pinjam=[]
+        nama_peminjam = []
+        kode_buku = []
+        judul =[]
+        pengarang=[]
+        tanggal_pinjam = []
+        def getDataPinjam(pinjam):
+            re = {x:self.d_pinjam[x]['nama_peminjam'] for x in range(len(pinjam))}
+            print(re)
+            for no,index in enumerate (pinjam[0].keys(),0):
+                print(f'{no} {index}')
+                index_pinjam.append(Label(title_framej,text=f'{index}',width=15, bg="grey"))
+                index_pinjam[no].grid(row=0,column=no,padx=10,pady=0)
+            for index in range(len(re)):
+                tampil_nama_peminjam = pinjam[index]['nama_peminjam']
+                tampil_kode_buku = pinjam[index]['kode_buku']
+                tampil_judul = pinjam[index]['judul']
+                tampil_pengarang = pinjam[index]['pengarang ']
+                tampil_tanggal_pinjam = pinjam[index]['tanggal_pinjam']
+                nama_peminjam.append(Label(main_frame,text=f'{tampil_nama_peminjam}',width=15,bg=getattr(Auth,'wcolor')))
+                nama_peminjam[index].grid(row=index,column=0,padx=10,pady=5)
+                kode_buku.append(Label(main_frame,text=f'{tampil_kode_buku}',width=15,bg=getattr(Auth,'wcolor')))
+                kode_buku[index].grid(row=index,column=1,padx=10,pady=5)
+                judul.append(Label(main_frame,text=f'{tampil_judul}',width=15,bg=getattr(Auth,'wcolor')))
+                judul[index].grid(row=index,column=2,padx=10,pady=5)
+                pengarang.append(Label(main_frame,text=f'{tampil_pengarang}',width=15,bg=getattr(Auth,'wcolor')))
+                pengarang[index].grid(row=index,column=3,padx=10,pady=5)
+                tanggal_pinjam.append(Label(main_frame,text=f'{tampil_tanggal_pinjam}',width=15,bg=getattr(Auth,'wcolor')))
+                tanggal_pinjam[index].grid(row=index,column=4,padx=10,pady=5)          
+        getDataPinjam(self.d_pinjam)
 class Auth(Buku,Pinjam):      
     def __init__(self):
         self.users = []
@@ -509,15 +619,53 @@ class Auth(Buku,Pinjam):
         self.path = path
         with open(self.path, encoding="utf-8") as data_file:
             return json.load(data_file)
+    def LoginRegister(self):
+        try:  
+            # title
+            title_frame = tk.Frame(root)
+            title_frame.place(relx=0.5, rely=0.05, relwidth=0.8, relheight=0.1, anchor='n')
+            title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Perpustakaan")
+            title.place(relx=0.25, relheight=1, relwidth=0.5)
+            rooty = tk.Frame(root, bg= getattr(Auth,'bcolor'), bd=15)
+            rooty.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n') 
+            # title
+            title_frame = tk.Frame(rooty, bd=5,bg= getattr(Auth,'bcolor'))
+            title_frame.place(relx=0.5, rely=0.01, relwidth=0.8, relheight=0.1, anchor='n')
+            title = tk.Label(title_frame,text="Menu", font=getattr(Auth,'fontsubtittle'),fg=getattr(Auth,'wcolor'), bg= getattr(Auth,'bcolor'), bd=15)
+            title.place(relx=0.25,  relwidth=0.5)
+            #register
+            self.frame = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=15)
+            self.frame.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.1, anchor='n')
+            button = tk.Button(self.frame, cursor='hand2',text="Register", font=40, command=lambda: self.Register())
+            button.place(relx=0.25, relwidth=0.5) 
+            #login
+            lower_framet= tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=15)
+            lower_framet.place(relx=0.5, rely=0.25, relwidth=0.8, relheight=0.1, anchor='n')
+            button2 = tk.Button(lower_framet,cursor='hand2', text="Login", font=40, command=lambda: self.login())
+            button2.place(relx=0.25,  relwidth=0.5)   
+            #keluar program
+            lower_frame = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=15)
+            lower_frame.place(relx=0.5, rely=0.35, relwidth=0.8, relheight=0.1, anchor='n')
+            button3 = tk.Button(lower_frame, cursor='hand2',text="Keluar", font=40, command=lambda:self.KeluarProgram())
+            button3.place(relx=0.25, relwidth=0.5)  
+            image_frame = tk.Frame(rooty)
+            image_frame.pack()
+            image_frame.place(relx=0.5, rely=0.45, anchor='n')
+            img = ImageTk.PhotoImage(Image.open("C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/bbook.png"))
+            label = Label(image_frame, image = img,borderwidth=0)
+            label.image= img
+            label.pack()
+        except FileNotFoundError:
+            messagebox.showerror('Peringatan', 'Maaf file penyimpanan tidak ada')
+            print("{0:^64}".format("**Maaf file penyimpanan tidak ada **"))  
+
     def Register(self):
         rooty = tk.Frame(root, bg= getattr(Auth,'bcolor'), bd=15)
         rooty.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n') 
-        # title
         title_frame = tk.Frame(rooty, bd=0,bg= getattr(Auth,'bcolor'))
         title_frame.place(relx=0.5, rely=0.02, relwidth=0.8, relheight=0.1, anchor='n')
         title = tk.Label(title_frame,text="REGISTER", font=getattr(Auth,'fontsubtittle'),fg=getattr(Auth,'wcolor'), bg= getattr(Auth,'bcolor'), bd=0)
         title.place(relx=0.25,  relwidth=0.5)
-        # main
         main_frame = Frame(rooty,bd=10,bg=getattr(Auth,'wcolor'),relief='solid', padx=10,pady=10).place(relx=0.5, rely=0.1, relheight=0.6, relwidth=0.5, anchor='n')
         Label(main_frame, fg=getattr(Auth,'wcolor'), text="Username", bg=getattr(Auth,'bcolor'),font=getattr(Auth,'font'), width=12).place(relx=0.4, rely=0.3, anchor='n')
         Label(main_frame, fg=getattr(Auth,'wcolor'), text="Alamat", bg= getattr(Auth,'bcolor'),font=getattr(Auth,'font'),width=12).place(relx=0.4, rely=0.38, anchor='n')
@@ -531,8 +679,8 @@ class Auth(Buku,Pinjam):
         opsi_frame = LabelFrame(main_frame)
         opsi_frame.place(relx=0.55, rely=0.46, anchor='n')
         self.role = StringVar()
-        self.role.set('admin')
-        self.admin_rb= Radiobutton(opsi_frame, variable=self.role,text='Admin',value='admin',font=getattr(Auth,'font'))
+        self.role.set('petugas')
+        self.admin_rb= Radiobutton(opsi_frame, variable=self.role,text='Petugas',value='petugas',font=getattr(Auth,'font'))
         self.admin_rb.pack(side=LEFT)
         self.user_rb= Radiobutton(opsi_frame, variable=self.role, text='User',value='user',font=getattr(Auth,'font'))
         self.user_rb.pack( side=LEFT)
@@ -540,7 +688,7 @@ class Auth(Buku,Pinjam):
         self.password.place(relx=0.55, rely=0.54, anchor='n')
         self.register_btn = Button(main_frame, bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'), width=30, text='Register', font=getattr(Auth,'font'), relief=SOLID,cursor='hand2',command=self.proses_register)
         self.register_btn.place(relx=0.5, rely=0.6, anchor='n')
-
+    
     def proses_register(self):
         #validasi form 
         try:
@@ -565,7 +713,6 @@ class Auth(Buku,Pinjam):
                 peringatan = "Password Tidak boleh kosong !"
             else:
                 check_counter += 1
-
             if check_counter == 4:        
                 self.d_users['username'] = self.username.get()
                 self.d_users['password'] = self.password.get()
@@ -590,8 +737,8 @@ class Auth(Buku,Pinjam):
             else:
                 messagebox.showerror('Peringatan', peringatan)
         except AssertionError as error:
-                    print(error)
                     messagebox.showinfo('Peringatan', error)
+    
     
     def login(self):
         rooty = tk.Frame(root, bg= getattr(Auth,'bcolor'), bd=15)
@@ -611,8 +758,6 @@ class Auth(Buku,Pinjam):
         self.password.place(relx=0.55, rely=0.45, anchor='n')
         self.login_btn = Button(main_frame, width=30, text='Login', bg=getattr(Auth,'bcolor'), fg=getattr(Auth,'wcolor'),font=getattr(Auth,'font'), relief=SOLID,cursor='hand2',command=self.prosesLogin)
         self.login_btn.place(relx=0.5, rely=0.55, anchor='n')
-
-     
     def prosesLogin(self):
         check_counter=0
         peringatan = ""
@@ -634,7 +779,6 @@ class Auth(Buku,Pinjam):
                 self.index_user = self.list_value.index(self.username.get())
                 pwd_user = self.akun[self.index_user]['password']
                 if(self.password.get() == pwd_user):
-                    # print('Selamat Anda sudah bisa masuk')
                     messagebox.showinfo('Sukses', 'Selamat Anda Berhasil Masuk')
                     self.Middleware()
                 else:
@@ -643,13 +787,63 @@ class Auth(Buku,Pinjam):
                 messagebox.showwarning('Peringatan', f'Maaf tidak ada user dengan nama {self.username.get()}')
         else:
                 messagebox.showerror('Peringatan', peringatan)
+    def tampilDataUser(self):
+        self.d_user = self.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/d_user.json')        # title
+        title_frame = tk.Frame(root)
+        title_frame.place(relx=0.5, rely=0.05, relwidth=0.5, relheight=0.1, anchor='n')
+        title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Users")
+        title.place(relx=0.25, relheight=1, relwidth=0.5)
+        main_frameB = tk.Frame(root, bg=getattr(Auth,'bcolor'), bd=10)
+        main_frameB.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n')
+        main_frame = tk.Frame(main_frameB, bg=getattr(Auth,'wcolor'), bd=10)
+        main_frame.place(relx=0.5, rely=0.02, relwidth=0.68, relheight=0.7, anchor='n')
+        title_framej = tk.Frame(main_frameB, bg="grey")
+        title_framej.place(relx=0.5, rely=0, relwidth=0.68, relheight=0.05, anchor='n')
+        index_user=[]
+        username = []
+        alamat = []
+        password =[]
+        role=[]
+        def getDataUser(users):
+            re = {x:self.d_user[x]['username'] for x in range(len(users))}
+            print(re)
+            for no,index in enumerate (users[0].keys(),0):
+                print(f'{no} {index}')
+                index_user.append(Label(title_framej,text=f'{index}',width=15, bg='grey'))
+                index_user[no].grid(row=0,column=no,pady=0,padx=10)
+            for index in range(len(re)):
+                tampil_username = users[index]['username']
+                tampil_alamat = users[index]['alamat']
+                tampil_password = users[index]['password']
+                tampil_role = users[index]['role']
+                username.append(Label(main_frame,text=f'{tampil_username}',width=15,bg=getattr(Auth,'wcolor')))
+                username[index].grid(row=index,column=0,padx=10,pady=5)
+                alamat.append(Label(main_frame,text=f'{tampil_alamat}',width=15,bg=getattr(Auth,'wcolor')))
+                alamat[index].grid(row=index,column=1,padx=10,pady=5)
+                password.append(Label(main_frame,text=f'{tampil_password}',width=15,bg=getattr(Auth,'wcolor')))
+                password[index].grid(row=index,column=2,padx=10,pady=5)
+                role.append(Label(main_frame,text=f'{tampil_role}',width=15,bg=getattr(Auth,'wcolor')))
+                role[index].grid(row=index,column=3,padx=10,pady=5)
+                button = tk.Button(root, cursor='hand2', text=f"Kembali", font=40, command=lambda: self.pilihanAdmin())
+                button.place(relx=0.25, rely=0.9, relheight=0.05, relwidth=0.5)  
+        getDataUser(self.d_user)
+
+    def Middleware(self):
+        try:
+            self.akun =  self.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/d_user.json')
+            if(self.akun[self.index_user]['role'] == 'admin'):
+                self.pilihanAdmin()
+            elif(self.akun[self.index_user]['role'] == 'petugas'):
+                self.pilihanPetugas()
+            else:
+                 self.pilihanUser()
+        except FileNotFoundError:
+            messagebox.showerror('Peringatan', 'Maaf file penyimpanan tidak ada')
 
     def pilihanAdmin(self):
         pil1 = ['Menambahkan buku', 'Mengedit Buku', 'Menghapus Buku','Menampilkan Buku','Menampilkan Data User','Menampilkan Data Pinjam','Logout']
-        # main
         rooty = tk.Frame(root, bg= getattr(Auth,'bcolor'), bd=15)
         rooty.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n') 
-        # title
         title_frame = tk.Frame(root)
         title_frame.place(relx=0.5, rely=0.05, relwidth=0.8, relheight=0.1, anchor='n')
         title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Perpustakaan")
@@ -677,157 +871,94 @@ class Auth(Buku,Pinjam):
         # tampil buku  
         lower_frame3 = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=5)
         lower_frame3.place(relx=0.5, rely=0.45, relwidth=0.5, relheight=0.1, anchor='n')
-        button3 = tk.Button(lower_frame3,cursor='hand2', text=f"{pil1[3]}", font=40, command=lambda: Buku.tampilData(self))
+        button3 = tk.Button(lower_frame3,cursor='hand2', text=f"{pil1[3]}", font=40, command=lambda: self.tampilData())
         button3.place(relx=0.25, relheight=1, relwidth=0.5)
         # tampil User
         lower_frame3 = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=5)
         lower_frame3.place(relx=0.5, rely=0.55, relwidth=0.5, relheight=0.1, anchor='n')
-        button3 = tk.Button(lower_frame3,cursor='hand2', text=f"{pil1[4]}", font=40, command=lambda: self.tampilData())
+        button3 = tk.Button(lower_frame3,cursor='hand2', text=f"{pil1[4]}", font=40, command=lambda: self.tampilDataUser())
         button3.place(relx=0.25, relheight=1, relwidth=0.5)  
-            # tampil Pinjam
+        # tampil Pinjam
         lower_frame3 = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=5)
         lower_frame3.place(relx=0.5, rely=0.65, relwidth=0.5, relheight=0.1, anchor='n')
-        button3 = tk.Button(lower_frame3,cursor='hand2', text=f"{pil1[5]}", font=40, command=lambda: self.tampilDataPinjam())
+        button3 = tk.Button(lower_frame3,cursor='hand2', text=f"{pil1[5]}", font=40, command=lambda: self.tampilDataPinjamAdmin())
         button3.place(relx=0.25, relheight=1, relwidth=0.5)  
         #keluar (menu)
         lower_frame4 = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=5)
         lower_frame4.place(relx=0.5, rely=0.75, relwidth=0.5, relheight=0.1, anchor='n')
         button4 = tk.Button(lower_frame4, cursor='hand2', text=f"{pil1[6]}", font=40, command=lambda: self.LoginRegister())
         button4.place(relx=0.25, relheight=1, relwidth=0.5)  
-    def tampilData(self):
-        self.d_user = self.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/d_user.json')        # title
-        title_frame = tk.Frame(root)
-        title_frame.place(relx=0.5, rely=0.05, relwidth=0.5, relheight=0.1, anchor='n')
-        title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Data User")
-        title.place(relx=0.25, relheight=1, relwidth=0.5)
-        main_fram = tk.Frame(root, bg=getattr(Auth,'bcolor'), bd=10)
-        main_fram.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n')
-        main_frame = tk.Frame(main_fram, bg=getattr(Auth,'bcolor'), bd=10)
-        main_frame.place(relx=0.59, rely=0.05, relwidth=0.8, relheight=0.8, anchor='n')
-        title_frame = tk.Frame(main_fram, bg=getattr(Auth,'bcolor'), bd=0)
-        title_frame.place(relx=0.6, rely=0, relwidth=0.8, relheight=0.1, anchor='n')
-        index_user=[]
-        username = []
-        alamat = []
-        password =[]
-        role=[]
-        def getDataUser(users):
-            re = {x:self.d_user[x]['username'] for x in range(len(users))}
-            print(re)
-            for no,index in enumerate (users[0].keys(),0):
-                print(f'{no} {index}')
-                index_user.append(Label(title_frame,text=f'{index}',width=15,fg=getattr(Auth,'wcolor'), bg='#4161AA'))
-                index_user[no].grid(row=0,column=no,pady=30,padx=10)
-            for index in range(len(re)):
-                tampil_username = users[index]['username']
-                tampil_alamat = users[index]['alamat']
-                tampil_password = users[index]['password']
-                tampil_role = users[index]['role']
-                username.append(Label(main_frame,text=f'{tampil_username}',width=15))
-                username[index].grid(row=index,column=0,padx=10,pady=20)
-                alamat.append(Label(main_frame,text=f'{tampil_alamat}',width=15))
-                alamat[index].grid(row=index,column=1,padx=10,pady=20)
-                password.append(Label(main_frame,text=f'{tampil_password}',width=15))
-                password[index].grid(row=index,column=2,padx=10,pady=20)
-                role.append(Label(main_frame,text=f'{tampil_role}',width=15))
-                role[index].grid(row=index,column=3,padx=10,pady=20)
-                button = tk.Button(root, cursor='hand2', text=f"Kembali", font=40, command=lambda: Auth.pilihanAdmin(self))
-                button.place(relx=0.25, rely=0.9, relheight=0.05, relwidth=0.5)  
-        getDataUser(self.d_user)
     
-    def tampilDataPinjam(self):
-        self.d_pinjam = self.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/p_buku.json')       
+    def pilihanPetugas(self):
+        pil1 = ['Meminjam buku', 'Mengembalikan buku Buku', 'Menampilkan Buku','Menampilkan Data Pinjam','Logout']
+        rooty = tk.Frame(root, bg= getattr(Auth,'bcolor'), bd=15)
+        rooty.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n') 
         title_frame = tk.Frame(root)
-        title_frame.place(relx=0.5, rely=0.05, relwidth=0.5, relheight=0.1, anchor='n')
-        title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Data Peminjaman")
+        title_frame.place(relx=0.5, rely=0.05, relwidth=0.8, relheight=0.1, anchor='n')
+        title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Perpustakaan")
         title.place(relx=0.25, relheight=1, relwidth=0.5)
-        main_fram = tk.Frame(root, bg=getattr(Auth,'bcolor'), bd=10)
-        main_fram.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n')
-        main_frame = tk.Frame(main_fram, bg=getattr(Auth,'bcolor'), bd=10)
-        main_frame.place(relx=0.59, rely=0.05, relwidth=0.8, relheight=0.8, anchor='n')
-        title_frame = tk.Frame(main_fram, bg=getattr(Auth,'bcolor'), bd=0)
-        title_frame.place(relx=0.6, rely=0, relwidth=0.8, relheight=0.1, anchor='n')
-        index_pinjam=[]
-        nama_peminjam = []
-        kode_buku = []
-        judul =[]
-        pengarang=[]
-        tanggal_pinjam = []
-        def getDataPinjam(pinjam):
-            re = {x:self.d_pinjam[x]['nama_peminjam'] for x in range(len(pinjam))}
-            print(re)
-            for no,index in enumerate (pinjam[0].keys(),0):
-                print(f'{no} {index}')
-                index_pinjam.append(Label(title_frame,text=f'{index}',width=15,fg=getattr(Auth,'wcolor'), bg='#4161AA'))
-                index_pinjam[no].grid(row=0,column=no,pady=30,padx=10)
-            for index in range(len(re)):
-                tampil_nama_peminjam = pinjam[index]['nama_peminjam']
-                tampil_kode_buku = pinjam[index]['kode_buku']
-                tampil_judul = pinjam[index]['judul']
-                tampil_pengarang = pinjam[index]['pengarang ']
-                tampil_tanggal_pinjam = pinjam[index]['tanggal_pinjam']
-                nama_peminjam.append(Label(main_frame,text=f'{tampil_nama_peminjam}',width=15))
-                nama_peminjam[index].grid(row=index,column=0,padx=10,pady=20)
-                kode_buku.append(Label(main_frame,text=f'{tampil_kode_buku}',width=15))
-                kode_buku[index].grid(row=index,column=1,padx=10,pady=20)
-                judul.append(Label(main_frame,text=f'{tampil_judul}',width=15))
-                judul[index].grid(row=index,column=2,padx=10,pady=20)
-                pengarang.append(Label(main_frame,text=f'{tampil_pengarang}',width=15))
-                pengarang[index].grid(row=index,column=3,padx=10,pady=20)
-                tanggal_pinjam.append(Label(main_frame,text=f'{tampil_tanggal_pinjam}',width=15))
-                tanggal_pinjam[index].grid(row=index,column=4,padx=10,pady=20)
-                button = tk.Button(root, cursor='hand2', text=f"Kembali", font=40, command=lambda: Auth.pilihanAdmin(self))
-                button.place(relx=0.25, rely=0.9, relheight=0.05, relwidth=0.5)  
-        getDataPinjam(self.d_pinjam)
+        # title
+        title_frame = tk.Frame(rooty, bd=15,bg= getattr(Auth,'bcolor'))
+        title_frame.place(relx=0.5, rely=0.03, relwidth=0.8, relheight=0.1, anchor='n')
+        title = tk.Label(title_frame,text=f"Menu Petugas ({self.username.get()})", font=getattr(Auth,'fontsubtittle'),fg=getattr(Auth,'wcolor'), bg= getattr(Auth,'bcolor'), bd=5)
+        title.place(relx=0.25,  relwidth=0.5)
+        #pinjam buku
+        self.frame = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=5)
+        self.frame.place(relx=0.5, rely=0.15, relwidth=0.5, relheight=0.1, anchor='n')
+        button = tk.Button(self.frame, cursor='hand2', text=f"{pil1[0]}", font=40, command=lambda: self.PinjamBuku())
+        button.place(relx=0.25, relheight=1, relwidth=0.5) 
+        #kembali buku
+        lower_frame = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=5)
+        lower_frame.place(relx=0.5, rely=0.25, relwidth=0.5, relheight=0.1, anchor='n')
+        button2 = tk.Button(lower_frame, cursor='hand2',text=f"{pil1[1]}", font=40, command=lambda: self.Kembali())
+        button2.place(relx=0.25, relheight=1, relwidth=0.5)    
+        # tampil buku  
+        lower_frame3 = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=5)
+        lower_frame3.place(relx=0.5, rely=0.35, relwidth=0.5, relheight=0.1, anchor='n')
+        button3 = tk.Button(lower_frame3,cursor='hand2', text=f"{pil1[2]}", font=40, command=lambda: self.tampilBukuPetugas())
+        button3.place(relx=0.25, relheight=1, relwidth=0.5)
+        # tampil Data Pinjam
+        lower_frame3 = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=5)
+        lower_frame3.place(relx=0.5, rely=0.45, relwidth=0.5, relheight=0.1, anchor='n')
+        button3 = tk.Button(lower_frame3,cursor='hand2', text=f"{pil1[3]}", font=40, command=lambda: self.tampilDataPinjamPetugas())
+        button3.place(relx=0.25, relheight=1, relwidth=0.5)  
+        #keluar (menu)
+        lower_frame4 = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=5)
+        lower_frame4.place(relx=0.5, rely=0.55, relwidth=0.5, relheight=0.1, anchor='n')
+        button4 = tk.Button(lower_frame4, cursor='hand2', text=f"{pil1[4]}", font=40, command=lambda: self.LoginRegister())
+        button4.place(relx=0.25, relheight=1, relwidth=0.5)  
 
     def pilihanUser(self):
-        pil1 = ['Meminjam Buku', 'Mengembalikan Buku','Daftar Buku','Logout']
+        pil1 = ['Daftar Buku','Logout']
         # main
         rooty = tk.Frame(root, bg= getattr(Auth,'bcolor'), bd=15)
         rooty.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n') 
+        title_frame = tk.Frame(root)
+        title_frame.place(relx=0.5, rely=0.05, relwidth=0.8, relheight=0.1, anchor='n')
+        title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Perpustakaan")
+        title.place(relx=0.25, relheight=1, relwidth=0.5)
         # title
         title_frame = tk.Frame(rooty, bd=15,bg= getattr(Auth,'bcolor'))
-        title_frame.place(relx=0.5, rely=0.02, relwidth=0.8, relheight=0.1, anchor='n')
+        title_frame.place(relx=0.5, rely=0.03, relwidth=0.8, relheight=0.1, anchor='n')
         title = tk.Label(title_frame,text=f"Menu User ({self.username.get()})", font=getattr(Auth,'fontsubtittle'),fg=getattr(Auth,'wcolor'), bg= getattr(Auth,'bcolor'), bd=5)
         title.place(relx=0.25,  relwidth=0.5)
-        #Pinja Buku
-        self.frame = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=15)
-        self.frame.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.1, anchor='n')
-        button = tk.Button(self.frame, cursor='hand2',text=f"{pil1[0]}", font=40, command=lambda: self.PinjamBuku())
-        button.place(relx=0.25, relwidth=0.5) 
-        #Kembali Buku
-        lower_framet= tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=15)
-        lower_framet.place(relx=0.5, rely=0.25, relwidth=0.8, relheight=0.1, anchor='n')
-        button2 = tk.Button(lower_framet,cursor='hand2', text=f"{pil1[1]}", font=40, command=lambda: self.Kembali())
-        button2.place(relx=0.25,  relwidth=0.5)   
         #Lihat Buku
         lower_fra= tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=15)
-        lower_fra.place(relx=0.5, rely=0.35, relwidth=0.8, relheight=0.1, anchor='n')
-        button3 = tk.Button(lower_fra,cursor='hand2', text=f"{pil1[2]}", font=40, command=lambda: self.tampilBuku())
+        lower_fra.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.1, anchor='n')
+        button3 = tk.Button(lower_fra,cursor='hand2', text=f"{pil1[0]}", font=40, command=lambda: self.tampilBukuUser())
         button3.place(relx=0.25,  relwidth=0.5)  
-        
         #Keluar
         lower_framets= tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=15)
-        lower_framets.place(relx=0.5, rely=0.45, relwidth=0.8, relheight=0.1, anchor='n')
-        button4 = tk.Button(lower_framets,cursor='hand2', text=f"{pil1[3]}", font=40, command=lambda: self.LoginRegister())
+        lower_framets.place(relx=0.5, rely=0.25, relwidth=0.8, relheight=0.1, anchor='n')
+        button4 = tk.Button(lower_framets,cursor='hand2', text=f"{pil1[1]}", font=40, command=lambda: self.LoginRegister())
         button4.place(relx=0.25,  relwidth=0.5)  
         image_frame = tk.Frame(rooty)
         image_frame.pack()
-        image_frame.place(relx=0.5, rely=0.55, anchor='n')
+        image_frame.place(relx=0.5, rely=0.40, anchor='n')
         img = ImageTk.PhotoImage(Image.open("C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/bacab.png"))
         label = Label(image_frame, image = img,borderwidth=0)
         label.image= img
         label.pack() 
-                  
-    def Middleware(self):
-        try:
-            self.akun =  self.OpsiRead('C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/d_user.json')
-            if(self.akun[self.index_user]['role'] == 'admin'):
-                self.pilihanAdmin()
-            else:
-                self.pilihanUser()
-        except FileNotFoundError:
-            messagebox.showerror('Peringatan', 'Maaf file penyimpanan tidak ada')
     def KeluarProgram(self):
         konfirmasi = messagebox.askyesno('Konfirmasi', 'Apakah kamu yakin ingin keluar?')
         if konfirmasi == True:
@@ -836,46 +967,6 @@ class Auth(Buku,Pinjam):
         else:
             messagebox.showinfo('stay..', 'Terimakasih tetap menggunakan aplikasi kami ^-^')
 
-    def LoginRegister(self):
-        try:  
-            # title
-            title_frame = tk.Frame(root)
-            title_frame.place(relx=0.5, rely=0.05, relwidth=0.8, relheight=0.1, anchor='n')
-            title = tk.Label(title_frame,font=getattr(Auth,'fonttittle'),text="Perpustakaan")
-            title.place(relx=0.25, relheight=1, relwidth=0.5)
-            # main
-            rooty = tk.Frame(root, bg= getattr(Auth,'bcolor'), bd=15)
-            rooty.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.8, anchor='n') 
-            # title
-            title_frame = tk.Frame(rooty, bd=5,bg= getattr(Auth,'bcolor'))
-            title_frame.place(relx=0.5, rely=0.01, relwidth=0.8, relheight=0.1, anchor='n')
-            title = tk.Label(title_frame,text="Menu", font=getattr(Auth,'fontsubtittle'),fg=getattr(Auth,'wcolor'), bg= getattr(Auth,'bcolor'), bd=15)
-            title.place(relx=0.25,  relwidth=0.5)
-            #register
-            self.frame = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=15)
-            self.frame.place(relx=0.5, rely=0.15, relwidth=0.8, relheight=0.1, anchor='n')
-            button = tk.Button(self.frame, cursor='hand2',text="Register", font=40, command=lambda: self.Register())
-            button.place(relx=0.25, relwidth=0.5) 
-            #login
-            lower_framet= tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=15)
-            lower_framet.place(relx=0.5, rely=0.25, relwidth=0.8, relheight=0.1, anchor='n')
-            button2 = tk.Button(lower_framet,cursor='hand2', text="Login", font=40, command=lambda: self.login())
-            button2.place(relx=0.25,  relwidth=0.5)   
-            #login
-            lower_frame = tk.Frame(rooty, bg= getattr(Auth,'bcolor'), bd=15)
-            lower_frame.place(relx=0.5, rely=0.35, relwidth=0.8, relheight=0.1, anchor='n')
-            button3 = tk.Button(lower_frame, cursor='hand2',text="Keluar", font=40, command=lambda:self.KeluarProgram())
-            button3.place(relx=0.25, relwidth=0.5)  
-            image_frame = tk.Frame(rooty)
-            image_frame.pack()
-            image_frame.place(relx=0.5, rely=0.45, anchor='n')
-            img = ImageTk.PhotoImage(Image.open("C:/Users/My Laptop/Documents/Programming/PYTHON/PYTHON BASIC/Challege/bbook.png"))
-            label = Label(image_frame, image = img,borderwidth=0)
-            label.image= img
-            label.pack()
-        except FileNotFoundError:
-            messagebox.showerror('Peringatan', 'Maaf file penyimpanan tidak ada')
-            print("{0:^64}".format("**Maaf file penyimpanan tidak ada **"))            
 try:
     x = Auth()
     x.LoginRegister()

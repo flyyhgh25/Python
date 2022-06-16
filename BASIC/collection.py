@@ -42,7 +42,7 @@ class Hero(object):
             print(f"|{self.listHero[0].nama}\t\t|{self.listHero[0].alias}\t\t|{self.listHero[0].kelompok}\t\t|")
             print(f"{'':=^57}")
 
-k = Hero('','','')
-k.inputHero()
-k.MenampilkanData()
+l = Hero('','','')
+l.inputHero()
+l.MenampilkanData()
 
