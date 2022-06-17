@@ -1,8 +1,8 @@
 import pyttsx3
 import tkinter as tk
-import tkinter
 import PyPDF2, pikepdf
 root = tk.Tk()
+
 class display():
     def __init__(self):
         canvas = tk.Canvas(root, height=12000, width=12000)
@@ -11,6 +11,7 @@ class display():
         self.title_frame = tk.Frame(canvas).place(relheight=0.1,relwidth=0.5,relx=0.3, rely=0.1)
         tk.Label(self.title_frame,font =('Castellar',20,'bold'),fg='black',text="TEXT SPEECH, Let's Speak").place(relx=0.35, rely=0.1)
         self.main_frame = tk.Frame(canvas,bg='#52594F',bd=5,relief='groove').place(relheight=0.7,relwidth=0.5,relx=0.25, rely=0.2)
+        
 class TextVoice(display):
     def __init__(self):
         self.configure = pyttsx3.init()
@@ -42,22 +43,19 @@ class ReadVoice(TextVoice):
         self.no_hal = tk.IntVar()
         self.hal = tk.Entry(self.main_frame,textvariable = self.no_hal).place(relx=0.31,rely=0.6,relheight=0.049,relwidth=0.18)
         self.audio = tk.Button(self.main_frame,text='Dengarkan audio',bg='black',font=('Poppin',13),width=25,fg='white',command=lambda:self.Dengar()).place(relx=0.507,rely=0.6)
-        self.simpan = tk.Button(self.main_frame,text='Lihat Isi',bg='black',font=('Poppin',13),width=25,fg='white',command=lambda:self.lihatIsi()).place(relx=0.40,rely=0.68)
-        
+        self.simpan = tk.Button(self.main_frame,text='Lihat Isi',bg='black',font=('Poppin',13),width=25,fg='white',command=lambda:self.LihatIsi()).place(relx=0.40,rely=0.68)
     def OpenFile(self,file_path):
         self.file_path = file_path
         self.file = open(self.file_path,"rb")
         self.pdf_reader = PyPDF2.PdfFileReader(self.file)
         return self.pdf_reader
-    
-    def lihatIsi(self):
+    def LihatIsi(self):
         self.page = self.textF.getPage(self.no_hal.get())
         self.text = self.page.extractText()
         print(self.text)
         tk.Label(self.main_frame,text=f'{self.text}',font=('Poppin',5),bg='#52594F',fg='white').place(relx=0.1, rely=0.65,relwidth=0.75,relheight=0.4)
-
     def Dengar(self):
-        self.lihatIsi()
+        self.LihatIsi()
         self.configure.say(self.text)
         self.configure.runAndWait()
 
